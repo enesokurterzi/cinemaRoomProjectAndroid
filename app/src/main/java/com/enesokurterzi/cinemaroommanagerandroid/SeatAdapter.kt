@@ -24,7 +24,7 @@ class SeatAdapter(private val allSeats : MutableList<MutableList<String>>, priva
         for (row in allSeats.indices) {
             for (seat in allSeats[0].indices) {
                 val chosenSeat = position % allSeats[0].size
-                val chosenRow = position / allSeats.size
+                val chosenRow = position / allSeats[0].size
                 holder.binding.recyclerViewButton.text = allSeats[row][seat]
                 holder.binding.recyclerViewButton.setOnClickListener(View.OnClickListener {
                     val ticketPrice = showThePrice(chosenRow)
